@@ -90,7 +90,6 @@ export class AuthService extends PrismaClient implements OnModuleInit {
       const { sub, iat, exp, ...user } = this.jwtService.verify(token, {
         secret: envs.jwtSecret,
       });
-      console.log(sub);
 
       return {
         user: user,
